@@ -3,6 +3,7 @@ from flask_cors import CORS
 import logging
 import uuid
 import json
+Flask.logger_name = 'logger'
 logging.getLogger().setLevel(logging.INFO)
 app = Flask(__name__)
 cors = CORS(app, supports_credentials=True)
@@ -19,7 +20,7 @@ def uid():
     logging.info(request.cookies.get(dodouid))
     if not request.cookies.get(dodouid):
         uid = str(uuid.uuid4())
-        resp.set_cookie(dodouid, uid, path='/adx', domain='http://www.ayang818.top')
+        resp.set_cookie(dodouid, uid, path='/adx', domain='.ayang818.top')
         logging.info(f'uid is {uid}')
     return resp
 

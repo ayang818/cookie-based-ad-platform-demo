@@ -1,0 +1,5 @@
+flask==2.0.1
+gunicorn 
+gevent
+requests
+flask-cors==2.0.1
